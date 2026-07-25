@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gaming Loader</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Login Screen -->
+  <div id="login-screen" class="screen active">
+    <div class="glass-card">
+      <div class="logo">
+        <div class="logo-icon">⚡</div>
+        <h1>Gaming Loader</h1>
+        <p>ادخل بياناتك للمتابعة</p>
+      </div>
+      <div class="form-group">
+        <input type="text" id="username" placeholder="اسم المستخدم" autocomplete="off" />
+      </div>
+      <div class="form-group">
+        <input type="password" id="password" placeholder="كلمة المرور" />
+      </div>
+      <button class="btn-primary" onclick="login()">دخول</button>
+      <p class="error-msg" id="login-error"></p>
+    </div>
+  </div>
+
+  <!-- Servers Screen -->
+  <div id="servers-screen" class="screen">
+    <header class="top-bar">
+      <span class="welcome" id="welcome-text">مرحباً</span>
+      <button class="btn-logout" onclick="logout()">خروج</button>
+    </header>
+    <div class="servers-container">
+      <h2>اختر السيرفر</h2>
+      <div class="servers-grid" id="servers-grid"></div>
+    </div>
+  </div>
+
+  <!-- Countdown Screen -->
+  <div id="countdown-screen" class="screen">
+    <div class="countdown-card">
+      <div class="server-name-display" id="selected-server-name">السيرفر 1</div>
+      <p class="connecting-text">جاري الاتصال...</p>
+      <div class="countdown-ring">
+        <svg viewBox="0 0 120 120">
+          <circle class="ring-bg" cx="60" cy="60" r="50"/>
+          <circle class="ring-progress" id="ring" cx="60" cy="60" r="50"/>
+        </svg>
+        <div class="countdown-number" id="countdown-number">10</div>
+      </div>
+      <button class="btn-cancel" onclick="cancelCountdown()">إلغاء</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
